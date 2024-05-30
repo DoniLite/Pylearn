@@ -1,0 +1,54 @@
+# Environnements virtuels
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+
+# Fichiers de configuration de l'environnement
+*.env
+.venv/
+
+# Dépendances
+*.egg-info/
+*.eggs/
+lib/
+local/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+MANIFEST
+
+# Caches
+.cache/
+.coverage
+.tox/
+.nox/
+*.snm
+*.swp
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
