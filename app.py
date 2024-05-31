@@ -1,45 +1,18 @@
-import schedule
-import psycopg2
-from datetime import datetime
-from flask import Flask, jsonify
-
-app = Flask(__name__)
+from multiprocessing import Process
+from server import app
+from job import start_scheduler
 
 
-@app.route('/')
-def home():
-    return "Hello, Flask!"
-
-
-@app.route('/api/data')
-def get_data():
-    data = {"message": "Hello, this is your data!"}
-    return jsonify(data)
-
-
-if __name__ == '__main__':
+def run_flask():
     app.run(port=8000, debug=True)
 
 
-def job(conf_job):
-    now = datetime.now()
-    print("Date actuelle :", now.strftime("%Y-%m-%d"))
-    print("Heure actuelle :", now.strftime("%H:%M:%S"))
-    conf_job()
+if __name__ == '__main__':
+    p1 = Process(target=run_flask)
+    p2 = Process(target=start_scheduler)
 
+    p1.start()
+    p2.start()
 
-schedule.every(10).seconds.do(job)
-
-# Connect to your postgres DB
-conn = psycopg2.connect("""postgres://doni_data_user:yV287EL5Ju5ESwxts8th7A0EPUQfv0Dn@dpg-cpc1pbm3e1ms739dhttg-a
-.oregon-postgres.render.com/doni_data""")
-
-
-cur = conn.cursor()
-
-# Execute a query
-# cur.execute("SELECT * FROM my_data")
-
-# Retrieve query results
-# records = cur.fetchall()
-# print(records)
+    p1.join()
+    p2.join()
