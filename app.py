@@ -1,6 +1,6 @@
 from multiprocessing import Process
-from server import app
-from job import start_scheduler
+from config.server import app
+from jobs.job import start_scheduler
 
 
 def run_flask():

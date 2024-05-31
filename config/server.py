@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 @app.get('/')
 def home():
+    ip_address = request.remote_addr
+    print(f" adress: {ip_address}")
     return "Hello, Flask!"
 
 
