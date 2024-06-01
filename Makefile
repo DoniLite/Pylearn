@@ -1,5 +1,6 @@
 # Chemin vers l'environnement virtuel
 VENV := env
+PYTHON := $(VENV)/bin/python
 
 # Commande pour créer l'environnement virtuel
 create_venv:
@@ -12,6 +13,18 @@ install_deps: create_venv
 # Commande pour lancer l'application
 run:
 	$(VENV)/bin/python app.py
+
+# Commande pour entraîner le modèle
+train:
+	$(PYTHON) learning/train_model.py
+
+#
+preprocess:
+	$(PYTHON) learning/preprocess.py
+
+# Commande pour filtrer les données
+filter:
+	$(PYTHON) learning/filter_data.py
 
 # Commande pour nettoyer les fichiers générés
 clean:
