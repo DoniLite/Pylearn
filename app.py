@@ -4,7 +4,7 @@ from jobs.job import start_scheduler
 
 
 def run_flask():
-    app.run(port=8000, debug=True)
+    app.run(port=8000, debug=True, host='0.0.0.0')
 
 
 if __name__ == '__main__':
