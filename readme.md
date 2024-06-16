@@ -3,7 +3,7 @@
 est un projet de **machine learning** par lequel j'envisage avant tout de booster mes connaissances dans le domaine de l'intelligence rtificielle mais aussi d'expérimenter certaines idées et de les mettre à disposition de qui le voudrait.  
 Ce repo comporte le code source de ayant permis de construire à la fois l'IA et l'architecture du site du projet où vous pourrez tester l'IA.  
 Si vous souaitez exploiter ce projet vous pouvez soit:
-- Consulter le site du projt via le lien: [pylearn.com]()
+- Consulter le site du projet via le lien: [pylearn.com]()
 - Intégrer des fonctionnalités à votre application via l'api: [api.pylearn.com]()
 - Collaborer dans le but d'améliorer le code source du projet
 
@@ -29,5 +29,17 @@ Si votre requette s'effectue bien vous recevrez une **reponse** suivant ce scém
   "suggestions": [],
   "WebSource": [] 
 }
+```
+### Pour obtenir une *API KEY*
+Veuillez vous rendre sur le site web mentionné plus haut et inscrivez vous en acceptant les conditions d'utilisation pour obtenir votre clé
+
+## Exemples
+
+```python
+import requests
+
+request = requests.post('url', {"data": "payload here"})
+data = request.json()
+print(data)
 ```
 

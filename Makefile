@@ -1,5 +1,5 @@
 # Chemin vers l'environnement virtuel
-VENV := env
+VENV := envs
 PYTHON := $(VENV)/bin/python
 
 # Commande pour créer l'environnement virtuel
@@ -29,3 +29,6 @@ filter:
 # Commande pour nettoyer les fichiers générés
 clean:
 	rm -rf $(VENV) __pycache__ *.pyc *.pyo
+
+freeze:
+	pip freeze > requirements.txt
