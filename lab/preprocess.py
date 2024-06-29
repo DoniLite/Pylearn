@@ -2,6 +2,7 @@ import pandas as pd
 from torch.utils.data import DataLoader
 from datasetClass import ConversationDataset
 from transformers import BertTokenizer
+from convNeuralNetwork import model
 
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -17,12 +18,16 @@ def preprocess_data_for_conversation():
     # print(data)
     print(train_dataloader)
     for i, (x, y) in enumerate(train_dataloader):
-        print(f'Batch {i + 1}')
-        print(x)
-        print(y)
+        pred = model(x)
+        # pred = pred.flatten()
+        print(pred.shape, y.shape)
+        # print(f'Batch {i + 1}')
+        # print(x.shape)
+        # print(y.shape)
 
 
-preprocess_data_for_conversation()
+if __name__ == '__main__':
+    preprocess_data_for_conversation()
 
 
 # def preprocess_data_for_location_v1():

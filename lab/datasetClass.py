@@ -41,12 +41,12 @@ class ConversationDataset(Dataset):
             return_tensors='pt'
         )
 
-        # sample = {
-        #     'input_ids': input_encoding['input_ids'].flatten(),
-        #     'attention_mask': input_encoding['attention_mask'].flatten(),
-        #     'response_ids': response_encoding['input_ids'].flatten(),
-        #     'response_attention_mask': response_encoding['attention_mask'].flatten()
-        # }
+        sample = {
+            'input_ids': input_encoding['input_ids'].flatten(),
+            'attention_mask': input_encoding['attention_mask'].flatten(),
+            'response_ids': response_encoding['input_ids'].flatten(),
+            'response_attention_mask': response_encoding['attention_mask'].flatten()
+        }
         input_ids = input_encoding['input_ids'].flatten()
         response_ids = response_encoding['input_ids'].flatten()
         return input_ids, response_ids
