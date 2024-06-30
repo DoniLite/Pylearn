@@ -8,6 +8,7 @@ ENV/
 # Fichiers de configuration de l'environnement
 *.env
 .venv/
+envs/
 
 # Dépendances
 *.egg-info/
